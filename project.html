@@ -1,0 +1,63 @@
+<button onclick="checkLetter('A');">A</button>
+ <button onclick="checkLetter('B');">B</button>
+ <button onclick="checkLetter('C');">C</button>
+ <button onclick="checkLetter('D');">D</button>
+ <button onclick="checkLetter('E');">E</button>
+ <button onclick="checkLetter('F');">F</button>
+ <button onclick="checkLetter('G');">G</button>
+ <button onclick="checkLetter('H');">H</button>
+ <button onclick="checkLetter('I');">I</button>
+ <button onclick="checkLetter('L');">L</button>
+ <button onclick="checkLetter('J');">J</button>
+ <button onclick="checkLetter('K');">K</button>
+ <button onclick="checkLetter('L');">L</button>
+ <button onclick="checkLetter('M');">M</button>
+ <button onclick="checkLetter('N');">N</button>
+ <button onclick="checkLetter('O');">O</button>
+ <button onclick="checkLetter('P');">P</button>
+ <button onclick="checkLetter('Q');">Q</button>
+ <button onclick="checkLetter('R');">R</button>
+ <button onclick="checkLetter('S');">S</button>
+ <button onclick="checkLetter('T');">T</button>
+ <button onclick="checkLetter('U');">U</button>
+ <button onclick="checkLetter('V');">V</button>
+ <button onclick="checkLetter('W');">W</button>
+ <button onclick="checkLetter('X');">X</button>
+ <button onclick="checkLetter('Y');">Y</button>
+<button onclick="checkLetter('Z');">Z</button>
+
+<script>
+var Words =["torture","execution","remedy","trace","earthwax","calorie","layer","federation","important","exclude","deprivation","aquarium","thought","park","action","green","noise","oral","rank","assault","opposite","essay","golf","string","bomb","blast","wife","wander","canvas","freshman","mutation","cabin","lunch","railroad","tablet","bald","deviation","pull","know","carrot","earthflax","cultural","so"];
+
+function randomword (){
+   
+
+    var index= Math.floor(Math.random()*Words.length);
+    
+    //if i hide this console.log then the player will not be able to see the answer.
+    console.log(Words[index])
+   answer= Words[index];
+//to make the code run with all typ of letters, lower and upper letters. 
+   answer =answer.toUpperCase();
+} 
+
+var answer= "";
+//console.log(Words.length);
+//updateing the answer 
+randomword();
+
+
+function checkLetter(char){
+
+	if (answer.includes(char)){
+		console.log ("Found: " + char);
+
+	}
+	else {
+		console.log("Not found:" + char);
+	}
+    tries = 6 
+}
+
+</script>
+
