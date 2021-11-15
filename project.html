@@ -1,4 +1,3 @@
-<!-- Start writing your project code in this file! -->
 <button onclick="checkLetter('A');">A</button>
  <button onclick="checkLetter('B');">B</button>
  <button onclick="checkLetter('C');">C</button>
@@ -28,7 +27,25 @@
 <button onclick="checkLetter('Z');">Z</button>
 
 <script>
-var answer = "FOOTBALL"
+var Words =["torture","execution","remedy","trace","earthwax","calorie","layer","federation","important","exclude","deprivation","aquarium","thought","park","action","green","noise","oral","rank","assault","opposite","essay","golf","string","bomb","blast","wife","wander","canvas","freshman","mutation","cabin","lunch","railroad","tablet","bald","deviation","pull","know","carrot","earthflax","cultural","so"];
+
+function randomword (){
+   
+
+    var index= Math.floor(Math.random()*Words.length);
+    
+    //if i hide this console.log then the player will not be able to see the answer.
+    console.log(Words[index])
+   answer= Words[index];
+//to make the code run with all typ of letters, lower and upper letters. 
+   answer =answer.toUpperCase();
+} 
+
+var answer= "";
+//console.log(Words.length);
+//updateing the answer 
+randomword();
+
 
 function checkLetter(char){
 
@@ -40,6 +57,7 @@ function checkLetter(char){
 		console.log("Not found:" + char);
 	}
     tries = 6 
-   
 }
+
 </script>
+
