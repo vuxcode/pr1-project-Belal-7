@@ -18,7 +18,6 @@
  <button id="G" onclick="checkLetter('G');">G</button>
  <button id="H" onclick="checkLetter('H');">H</button>
  <button id="I" onclick="checkLetter('I');">I</button>
- <button id="L" onclick="checkLetter('L');">L</button>
  <button id="J" onclick="checkLetter('J');">J</button>
  <button id="K" onclick="checkLetter('K');">K</button>
  <button id="L" onclick="checkLetter('L');">L</button>
@@ -81,8 +80,9 @@ function randomword (){
 guess = new Array(answer.length).fill("_");
 console.log(guess);
 showguess();
-
-answer.split('');
+console.log(answer);
+answer= answer.split('');
+console.log(answer);
 } 
 
 function showguess(){
@@ -97,11 +97,19 @@ function checkLetter(char){
    document.getElementById(char).disabled = true
 
 for (var i =0; i< answer.length; i++){
-   if (char == i);
-console.log("found" + i);
+      
+      console.log(answer[i]);
+
+   if (char == answer[i]){
+
+      console.log("ARE WE HERE!?!?");
+
+         //console.log("found" + i);
 }
+}
+
  
-	if (answer.includes(char)){
+if (answer.includes(char)){
 		console.log ("Found: " + char);
 
 showguess();
@@ -124,8 +132,12 @@ function update(){
    index++;
  //console.log("the index" + index)
    if (index >= 12){
-   document.write("Game over");
+   document.write("Game over, You lose!");
 }
+//else if (answer == guess) {
+  // document.write("You Win!")}
+
+
 else{
   hangman.src= step[index];
 }
@@ -149,6 +161,7 @@ else {
    index = 0;
 }
 }
+
 
 
 
