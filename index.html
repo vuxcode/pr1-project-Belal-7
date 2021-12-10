@@ -18,6 +18,11 @@
     #Restart:hover {
       box-shadow: 0 6px 20px 0;
     }
+    .style
+      {
+         font-size: 200%;
+         color: White;
+      }
 </style>
 <img id="hangman" src="step1.PNG" style="width: 400px; height: 400px;"><br>
 
@@ -96,7 +101,7 @@ function randomword (){
     var index= Math.floor(Math.random()*Words.length);
     
     //if i hide this console.log then the player will not be able to see the answer.
-    console.log(Words[index])
+    //console.log(Words[index])
    answer= Words[index];
 
 //to make the code run with all typ of letters, lower and upper letters. 
@@ -105,9 +110,9 @@ function randomword (){
 guess = new Array(answer.length).fill("_");
 console.log(guess);
 showguess();
-console.log(answer);
+//console.log(answer);
 answer= answer.split('');
-console.log(answer);
+//console.log(answer);
 } 
 
 function showguess(){
@@ -123,7 +128,7 @@ function checkLetter(char){
 
 for (var i =0; i< answer.length; i++){
       
-    console.log(answer[i]);
+    //console.log(answer[i]);
 
    if (char == answer[i]){
 
@@ -135,10 +140,11 @@ console.log(guess[i]);
    
 }
 
-console.log(answer.join("-"));
+//console.log(answer.join("-"));
 console.log(guess.join("-"));
 if (guess.join("-") == answer.join("-")){
-  // document.write("You Win!")
+  document.getElementById('button').innerText = "You Win!"
+       document.getElementById('button').classList.add('style');
    hangman.src= '13.PNG';
 }
 
@@ -165,7 +171,8 @@ function update(){
    index++;
  //console.log("the index" + index)
    if (index >= 12){
-   //document.write("Game over, You lose!");
+      document.getElementById('button').innerText = "Game over, You lose!"
+       document.getElementById('button').classList.add('style');
    hangman.src= '14.PNG';
 
 }
